@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'first_name' => 'Admin',
             'last_name' => 'Super',
-            'name' => User::getNameAttribute(),
+            'name' => (new \App\Models\User)->setNameAttribute(),
             'email' => 'superadmin@khgc.com',
             'password' => Hash::make('Abcd@1234'),
             'role' => 'admin',

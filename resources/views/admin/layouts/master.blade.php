@@ -170,7 +170,15 @@
                     <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Nguyễn Tuấn Quỳnh</a>
+                    <a href="" class="d-block">Nguyễn Tuấn Quỳnh</a>
+                    <a class="dropdown-item" href="{{ route('auth.logout') }}"
+                       onclick="event.preventDefault();
+                       document.getElementById('logout-form').submit();">
+                        {{ __('Đăng xuất') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('auth.logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </div>
             </div>
 
